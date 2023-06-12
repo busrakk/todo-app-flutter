@@ -47,6 +47,8 @@ class TodoController extends GetxController {
     var databasesPath = await getDatabasesPath();
     String path = join(databasesPath, dbName);
     await deleteDatabase(path);
+    // todoList = [];
+    // update();
     debugPrint("$dbName has been deleted");
   }
 
