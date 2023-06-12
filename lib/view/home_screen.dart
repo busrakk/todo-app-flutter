@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/todo_controller.dart';
 import 'package:flutter_application_1/shared/todo_item.dart';
+import 'package:flutter_application_1/view/edit_screen.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,6 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     todo: controller.todoList[index],
                     todoController: controller),
               ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(const EditScreen()); // insert işlemi için
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

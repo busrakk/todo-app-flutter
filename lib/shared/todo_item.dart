@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/todo_controller.dart';
 import 'package:flutter_application_1/model/todo_model.dart';
+import 'package:flutter_application_1/view/edit_screen.dart';
+import 'package:get/get.dart';
 
 class TodoItem extends StatelessWidget {
   final TodoController todoController;
@@ -44,6 +46,8 @@ class TodoItem extends StatelessWidget {
                   IconButton(
                       onPressed: () {
                         // navigate to the edit screen with todo entity
+                        Get.to(EditScreen(todo: todo),
+                            transition: Transition.downToUp);
                       },
                       icon: const Icon(
                         Icons.edit,

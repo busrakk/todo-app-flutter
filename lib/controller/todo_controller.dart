@@ -21,7 +21,7 @@ class TodoController extends GetxController {
     var defaultDBPath = await getDatabasesPath();
 
     final actualDBPath = join(defaultDBPath, dbName);
-    openDatabase(actualDBPath);
+    openAppDatabase(path: actualDBPath);
   }
 
   Future<void> openAppDatabase({required String path}) async {
@@ -93,5 +93,6 @@ class TodoController extends GetxController {
   Future<void> deleteTodo(int id) async {
     var count = await database.delete("todo", where: "id=$id");
     debugPrint("Deleted row count: $count");
+    getAllTodos();
   }
 }
